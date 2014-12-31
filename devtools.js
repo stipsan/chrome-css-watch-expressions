@@ -18,12 +18,10 @@ chrome.devtools.panels.elements.createSidebarPane(
     function(sidebar) {
   function updateElementProperties() {
     console.log("(" + page_getProperties.toString() + ")()");
-    console.dir(sidebar);
-    sidebar.setExpression("(" + page_getProperties.toString() + ")()", 'title', {}, '', function(){console.log('callback!', this, arguments)});
+    sidebar.setPage('panel.html');
+    //sidebar.setExpression("(" + page_getProperties.toString() + ")()", 'title', {}, '', function(){console.log('callback!', this, arguments)});
     console.log(chrome.devtools);
     console.log(chrome.devtools.panels.elements);
   }
   updateElementProperties();
-  chrome.devtools.panels.elements.onSelectionChanged.addListener(
-      updateElementProperties);
 });
