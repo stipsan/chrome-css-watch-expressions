@@ -14,21 +14,10 @@ var page_getProperties = function() {
   return copy;
 }
 
-var sidebar_getProperties = function(data){
-  // Make a shallow copy with a null prototype, so that sidebar does not
-  // expose prototype.
-  var props = Object.getOwnPropertyNames(data);
-  var copy = { __proto__: null };
-  for (var i = 0; i < props.length; ++i)
-    copy[props[i]] = data[props[i]];
-    return copy;
-}
-
 chrome.devtools.panels.elements.createSidebarPane(
     "Watch Expressions",
     function(sidebar) {
   function updateElementProperties() {
-    console.log(sidebar, "(" + page_getProperties().toString() + ")()");
     sidebar.setExpression("(" + page_getProperties().toString() + ")()");
   }
   updateElementProperties();
