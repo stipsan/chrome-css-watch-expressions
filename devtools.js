@@ -18,7 +18,11 @@ chrome.devtools.panels.elements.createSidebarPane(
     "Watch Expressions",
     function(sidebar) {
   function updateElementProperties() {
-    sidebar.setExpression("(" + page_getProperties().toString() + ")()");
+    console.log("(" + page_getProperties.toString() + ")()");
+    console.dir(sidebar);
+    sidebar.setExpression("(" + page_getProperties.toString() + ")()");
+    console.log(chrome.devtools);
+    console.log(chrome.devtools.panels.elements);
   }
   updateElementProperties();
   chrome.devtools.panels.elements.onSelectionChanged.addListener(
