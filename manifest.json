@@ -1,0 +1,7 @@
+{
+  "name": "Chrome CSS Watch Expressions",
+  "version": "1.0",
+  "description": "Extends the Developer Tools, adding a sidebar that displays the computed style of elements.",
+  "devtools_page": "devtools.html",
+  "manifest_version": 2
+}
